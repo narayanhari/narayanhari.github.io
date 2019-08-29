@@ -14,7 +14,7 @@ body{
     background: #000;
     color: white;
     font-family: "Oxygen",sans-serif;
-    overflow-y: hidden;
+/*    overflow-y: hidden;*/
 }
 
 a{
@@ -345,7 +345,7 @@ input[type="submit"]{
     }
     @media(min-width:600px){
         .mobile-nav{
-/*            display: none;*/
+            display: none;
         }
     }
 }
