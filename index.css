@@ -14,7 +14,7 @@ body{
     background: #000;
     color: white;
     font-family: "Oxygen",sans-serif;
-/*    overflow-y: hidden;*/
+    overflow-y: hidden;
 }
 
 a{
