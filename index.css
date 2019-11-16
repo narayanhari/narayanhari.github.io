@@ -304,7 +304,7 @@ input[type="submit"]{
 
 @media(max-width: 601px){
     aside{
-/*        display: none;*/
+        display: none;
     }
     main{
         width: 100%;
@@ -345,7 +345,7 @@ input[type="submit"]{
     }
     @media(min-width:600px){
         .mobile-nav{
-/*            display: none;*/
+            display: none;
         }
     }
 }
