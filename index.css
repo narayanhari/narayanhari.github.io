@@ -302,7 +302,7 @@ input[type="submit"]{
     }
 }
 
-@media(max-width: 701px){
+@media(max-width: 1001px){
     aside{
         display: none;
     }
@@ -320,7 +320,18 @@ input[type="submit"]{
         font-size: 1em;
         letter-spacing: 2px;
     }
-    
+    .about,
+.folio,
+.contact{
+    line-height: 1.5em;
+    letter-spacing: 1px;
+    font-weight: 300;
+    text-align: justify;
+     max-width: 980px;
+    background: #000;
+    margin-left: 4%;
+    padding: 12px 30px 12px 20px;
+}
     .mobile-nav{
         position: fixed;
         width: 100%;
