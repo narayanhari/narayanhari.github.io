@@ -302,6 +302,12 @@ input[type="submit"]{
     }
 }
 
+@media(min-width: 1003px){
+    .mobile-nav{
+        display: none;
+    }
+}
+
 @media(max-width: 1001px){
     aside{
         display: none;
