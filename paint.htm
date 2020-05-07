@@ -48,6 +48,25 @@
     
     canvas.addEventListener('mousemove',draw);
     
+        canvas.addEventListener("touchstart", function (e) {
+     console.log(e);
+//        var   mousePos = getTouchPos(canvas, e);
+  var touch = e.touches[0];
+        console.log(e);
+        isDraw=true;
+        [lastX,lastY]=[touch.clientX,touch.clientY];
+        draw(touch);
+  });
+    canvas.addEventListener("touchmove", function (e) {
+     console.log(e);
+//        var   mousePos = getTouchPos(canvas, e);
+  var touch = e.touches[0];
+        console.log(e);
+        isDraw=true;
+        [lastX,lastY]=[touch.clientX,touch.clientY];
+        draw(touch);
+  });
+    
 
     canvas.addEventListener('mousedown',(e)=> {
         isDraw=true;
