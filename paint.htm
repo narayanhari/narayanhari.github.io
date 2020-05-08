@@ -5,6 +5,7 @@
   <title>HTML5 Canvas</title>
 </head>
 <body>
+<div id="x" style="position: fixed; z-index: 143143; outline: 0px; top: 45%; left: 43%; transform: translate(-50%, -50%) rotate(3deg); pointer-events: none;"></div>
 <canvas id="draw" width="800" height="800"></canvas>
 <script>
     
@@ -39,7 +40,7 @@
         
         if(direction){
             ctx.lineWidth++;
-            console.log(ctx.lineWidth);
+//            console.log(ctx.lineWidth);
         }else{
             ctx.lineWidth--;
 //            console.log(ctx.lineWidth);
@@ -83,6 +84,10 @@ document.body.addEventListener("touchmove", function (e) {
     canvas.addEventListener('mousedown',(e)=> {
         isDraw=true;
         [lastX,lastY]=[e.offsetX,e.offsetY];
+//        if(document.getElementById('imga')){
+//        var image_x = document.getElementById('imga');
+//        image_x.parentNode.removeChild(image_x);
+//        }
     });
     
     
@@ -91,16 +96,31 @@ document.body.addEventListener("touchmove", function (e) {
     canvas.addEventListener('mouseout',()=> isDraw=false);
     
        let ans=[];
+    let display=false;
     const secretCode='nhm';
     
     window.addEventListener('keyup',(e)=>{
-        console.log(e.key);
+//        console.log(e.key);
         ans.push(e.key);
         ans.splice(-secretCode.length-1,ans.length-secretCode.length);
         if(ans.join('').includes(secretCode)){
             console.log('DING Dang');
-            cornify_add();
-            document.querySelector(".__cornify_unicorn").style.pointerEvents = "none";
+            display=!display;
+//            cornify_add();
+            if(display){
+                 var img = document.createElement("img");
+            img.src = "1.png";
+            img.id='imga';
+            var src = document.getElementById("x");
+            src.appendChild(img);
+            document.querySelector("#x").style.pointerEvents = "none";
+            }else{
+                if(document.getElementById('imga')){
+        var image_x = document.getElementById('imga');
+        image_x.parentNode.removeChild(image_x);
+        }
+            }
+//            document.querySelector(".__cornify_unicorn").style.pointerEvents = "none";
         }
 //        console.log(check);
     });
