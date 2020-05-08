@@ -131,7 +131,7 @@ header h5{
 .contact h2{
     font-weight: 300;
     text-transform: uppercase;
-    text-decoration: line-through;
+    text-decoration: underline;
     padding-bottom: 10px;
     margin: 100px 0 0 0;
     letter-spacing: 4px;
