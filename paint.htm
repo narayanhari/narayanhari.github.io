@@ -90,6 +90,22 @@ document.body.addEventListener("touchmove", function (e) {
     canvas.addEventListener('mouseup',()=> isDraw=false);
     canvas.addEventListener('mouseout',()=> isDraw=false);
     
+       let ans=[];
+    const secretCode='nhm';
+    
+    window.addEventListener('keyup',(e)=>{
+        console.log(e.key);
+        ans.push(e.key);
+        ans.splice(-secretCode.length-1,ans.length-secretCode.length);
+        if(ans.join('').includes(secretCode)){
+            console.log('DING Dang');
+            cornify_add();
+            document.querySelector(".__cornify_unicorn").style.pointerEvents = "none";
+        }
+//        console.log(check);
+    });
+    
+    
     
     
 </script>
