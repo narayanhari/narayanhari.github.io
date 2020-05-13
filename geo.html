@@ -9,9 +9,11 @@
 <body>
     
     <p class=".here">here</p>
+    <h6>here</h6>
   <script>
       
-      const cor= document.querySelector('p');
+      const len= document.querySelector('p');
+      const lat= document.querySelector('h6');
       
       navigator.geolocation.watchPosition(data=>{
            let lat=data.coords.latitude;
@@ -20,7 +22,9 @@
 //          arr.push(lat);
 //          arr.join('');
           console.log(len);
-          cor.innerHTML=len;
+          
+          len.innerHTML=len;
+          lat.innerHTML=lat;
       });
     
       
