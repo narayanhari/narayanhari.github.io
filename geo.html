@@ -12,8 +12,7 @@
     <h6>here</h6>
   <script>
       
-      const len= document.querySelector('p');
-      const lat= document.querySelector('h6');
+      const cor= document.querySelector('p');
       
       navigator.geolocation.watchPosition(data=>{
            let lat=data.coords.latitude;
@@ -22,9 +21,7 @@
 //          arr.push(lat);
 //          arr.join('');
           console.log(len);
-          
-          len.innerHTML=len;
-          lat.innerHTML=lat;
+          cor.innerHTML=len;
       });
     
       
