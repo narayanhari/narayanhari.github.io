@@ -1,0 +1,29 @@
+<html>
+</html><!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <title>Document</title>
+  <meta name="viewport" content="width=device-width">
+</head>
+<body>
+    
+    <p class=".here"></p>
+  <script>
+      
+      const cor= document.querySelector('.here');
+      
+      navigator.geolocation.watchPosition(data=>{
+          console.log(data);
+          let lat=data.coords.latitude;
+          let len=data.coords.longitude;
+          let arr=[].push(len);
+          arr.push(lat);
+          arr.join('');
+          cor.innerHTML=arr;
+      });
+    
+      
+  </script>
+</body>
+</html>
