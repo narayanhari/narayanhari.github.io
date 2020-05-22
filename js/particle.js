@@ -33,7 +33,7 @@ function windowResized() {
 
 function draw() {
     background(0);
-    console.log(particles.length);
+//    console.log(particles.length);
 
     particles.forEach((particle, idx) => {
         particle.update();
@@ -89,19 +89,19 @@ class Particle {
     }
     addParticles(){
         if(mouseIsPressed){
-//            console.log(this.partRatio);
+            console.log(this.partRatio);
             partRatio+=1;
-            if(partRatio %90==0){
+            if(partRatio %270==1){
                 particles.push(new Particle(mouseX,mouseY));
                 const max= Math.min(Math.floor(window.innerWidth / 6), 240);
-                console.log(max,"max");
+//                console.log(max,"max");
                 const numP=particles.length;
-                console.log(particles.length,"partice");
+//                console.log(particles.length,"partice");
                 const num=50;
-                console.log(num,"num")
+//                console.log(num,"num")
             if(numP >= max){
                 particles=particles.splice(1,num);
-                console.log("inside");
+//                console.log("inside");
             }
             }
             
