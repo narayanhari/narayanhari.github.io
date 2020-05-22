@@ -177,13 +177,17 @@ header h5{
     background-color: #424242;
 }
 
-.bc{
-    width: 85%;
-}
+
 .web{
-    width: 90%;
+    width: 95%;
+}
+.devops{
+    width: 95%;
 }
 .ml{
+    width: 85%;
+}
+.bc{
     width: 80%;
 }
 
@@ -210,6 +214,18 @@ header h5{
 
 .row-halves .col{
     width: 49%;
+}
+.web{
+    width: 90%;
+}
+.devops{
+    width: 90%;
+}
+.ml{
+    width: 80%;
+}
+.bc{
+    width: 77%;
 }
 .col{
     border: 1px solid #222;
@@ -306,10 +322,10 @@ input[type="submit"]{
 
 @media(max-width: 768px){
     .row-halves{
-        display: block;
+        display: flex;
     }
     .row-halves .col{
-        width: 100%;
+        width: 49%;
         margin: 0 0 10px 0;
     }
 }
