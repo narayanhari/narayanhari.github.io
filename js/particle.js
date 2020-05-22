@@ -4,12 +4,15 @@ let particlesLength=0;
 
 function setup() {
     const home = document.querySelector('body');
-//    console.log(home.height);
+
 //    const cnv = createCanvas(windowWidth, windowHeight);
-    //	cnv.position(100,100);
+//    cnv.position(100,100);
 //    cnv.style('display', 'block');
-     windowResized();
-    //    cnv.parent('home');
+//    cnv.parent('home');
+
+// canvas creation on window resize and every scrolling     
+    windowResized();
+// paricles added to canvas
     particlesLength = Math.min(Math.floor(window.innerWidth / 10), 100);
     for (let i = 0; i < particlesLength; i++) {
         particles.push(new Particle());
@@ -26,6 +29,8 @@ function windowResized() {
 
   resizeCanvas(w, h, true);
 }
+
+// old window resize function which is not working for scrolling
 
 //function windowResized() {
 //    resizeCanvas(windowWidth+scrollX, windowHeight+scrollY);
@@ -71,14 +76,6 @@ class Particle {
         if (this.pos.y < 0 || this.pos.y > height) {
             this.vel.y *= -1;
         }
-
-        // 		if(this.pos.x > width) {
-        // 			this.pos.x = 0;
-        // 		}
-
-        // 		if(this.pos.y > height) {
-        // 			this.pos.y = 0;
-        // 		}
     }
     mouseRepultion(){
         const mouseD = dist(this.pos.x, this.pos.y, mouseX, mouseY);
@@ -91,17 +88,15 @@ class Particle {
         if(mouseIsPressed){
             console.log(this.partRatio);
             partRatio+=1;
+            //adding particle for every 270 clickes as every mouse click fires event appox 270 times 
             if(partRatio %270==1){
                 particles.push(new Particle(mouseX,mouseY));
                 const max= Math.min(Math.floor(window.innerWidth / 6), 240);
-//                console.log(max,"max");
                 const numP=particles.length;
-//                console.log(particles.length,"partice");
                 const num=50;
-//                console.log(num,"num")
+            // removing particles when reaches 240
             if(numP >= max){
                 particles=particles.splice(1,num);
-//                console.log("inside");
             }
             }
             
