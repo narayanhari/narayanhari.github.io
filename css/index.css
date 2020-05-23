@@ -229,7 +229,7 @@ header h5{
 }
 .col{
     border: 1px solid #222;
-    background: #222;
+    background: rgba(34,34,34,0.6);
     color: #b2b2b2;
     padding: 10px;
 }
