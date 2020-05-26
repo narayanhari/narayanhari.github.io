@@ -80,8 +80,8 @@ class Particle {
     mouseRepultion(){
         const mouseD = dist(this.pos.x, this.pos.y, mouseX, mouseY);
         if(mouseD <= 50){
-            this.vel.x =-2;
-            this.vel.y =-2;
+            this.vel.x =-1*random(0,2);
+            this.vel.y =-1*random(0,2);
         }
     }
     addParticles(){
