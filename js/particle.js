@@ -77,13 +77,24 @@ class Particle {
             this.vel.y *= -1;
         }
     }
+//    mouseRepultion(){
+//        const mouseD = dist(this.pos.x, this.pos.y, mouseX, mouseY);
+//        if(mouseD <= 50){
+//            this.vel.x =-1*random(0,2);
+//            this.vel.y =-1*random(0,2);
+//        }
+//    }
     mouseRepultion(){
-        const mouseD = dist(this.pos.x, this.pos.y, mouseX, mouseY);
-        if(mouseD <= 50){
-            this.vel.x =-1*random(0,2);
-            this.vel.y =-1*random(0,2);
-        }
+        particles.forEach(particle => {
+            const mouseD = dist(this.pos.x, this.pos.y, mouseX, mouseY);
+            if (mouseD < 120) {
+                const alpha = map(mouseD, 0, 120, 0, 0.20)
+                stroke(`rgba(2, 70, 70, ${alpha})`);
+                line(this.pos.x, this.pos.y, mouseX, mouseY)
+            }
+        });
     }
+    
     addParticles(){
         if(mouseIsPressed){
             console.log(this.partRatio);
