@@ -1,139 +1,140 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta name="viewport" content="width=device-width, user-scalable=no">
-  <title>HTML5 Canvas</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no">
+    <title>HTML5 Canvas</title>
 </head>
+
 <body>
-<div id="x" style="position: fixed; z-index: 143143; outline: 0px; top: 45%; left: 43%; transform: translate(-50%, -50%) rotate(3deg); pointer-events: none;"></div>
-<canvas id="draw" width="800" height="800"></canvas>
-<script>
-    
-    const canvas= document.querySelector('#draw');
-    const ctx= canvas.getContext('2d');
-    canvas.width=window.innerWidth;
-    canvas.height=window.innerHeight;
-    ctx.strokeStyle='BADA55';
-    ctx.lineCap='round';
-    ctx.lineJoin='round';
-    ctx.lineWidth=10;
-    
-    let hue=0;
-    let direction=true;
-    let isDraw=false;
-    let lastX=0;
-    let lastY=0;
-    
-    function draw(e){
-        if(!isDraw) return;
-//        console.log(e);
-        ctx.strokeStyle=`hsl(${hue},100%,50%)`;
-        ctx.beginPath();
-        ctx.moveTo(lastX,lastY);
-        ctx.lineTo(e.offsetX,e.offsetY);
-        ctx.stroke();
-        [lastX,lastY]=[e.offsetX,e.offsetY];
-        hue++;
-        if(ctx.lineWidth>=100 || ctx.lineWidth <= 9){
-            direction=!direction;
-        }
-        
-        if(direction){
-            ctx.lineWidth++;
-//            console.log(ctx.lineWidth);
-        }else{
-            ctx.lineWidth--;
-//            console.log(ctx.lineWidth);
-        }
-    }
-    
-    canvas.addEventListener('mousemove',draw);
-    
-        canvas.addEventListener("touchstart", function (e) {
-     console.log(e);
-//        var   mousePos = getTouchPos(canvas, e);
-  var touch = e.touches[0];
-        console.log(e);
-        isDraw=true;
-        [lastX,lastY]=[touch.clientX,touch.clientY];
-        draw(touch);
-  });
-    canvas.addEventListener("touchmove", function (e) {
-     console.log(e);
-//        var   mousePos = getTouchPos(canvas, e);
-  var touch = e.touches[0];
-        console.log(e);
-        isDraw=true;
-        [lastX,lastY]=[touch.clientX,touch.clientY];
-        draw(touch);
-  });
-    
-       document.body.addEventListener("touchstart", function (e) {
-  if (e.target == canvas) {
-    e.preventDefault();
-  }
-}, false);
-document.body.addEventListener("touchmove", function (e) {
-  if (e.target == canvas) {
-    e.preventDefault();
-  }
-}, false);
-    
-    
+    <div id="x" style="position: fixed; z-index: 143143; outline: 0px; top: 45%; left: 43%; transform: translate(-50%, -50%) rotate(3deg); pointer-events: none;"></div>
+    <canvas id="draw" width="800" height="800"></canvas>
+    <script>
+        const canvas = document.querySelector('#draw');
+        const ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        ctx.strokeStyle = 'BADA55';
+        ctx.lineCap = 'round';
+        ctx.lineJoin = 'round';
+        ctx.lineWidth = 10;
 
-    canvas.addEventListener('mousedown',(e)=> {
-        isDraw=true;
-        [lastX,lastY]=[e.offsetX,e.offsetY];
-//        if(document.getElementById('imga')){
-//        var image_x = document.getElementById('imga');
-//        image_x.parentNode.removeChild(image_x);
-//        }
-    });
-    
-    
-    
-    canvas.addEventListener('mouseup',()=> isDraw=false);
-    canvas.addEventListener('mouseout',()=> isDraw=false);
-    
-       let ans=[];
-    let display=false;
-    const secretCode='nhm';
-    
-    window.addEventListener('keyup',(e)=>{
-//        console.log(e.key);
-        ans.push(e.key);
-        ans.splice(-secretCode.length-1,ans.length-secretCode.length);
-        if(ans.join('').includes(secretCode)){
-            console.log('DING Dang');
-            display=!display;
-//            cornify_add();
-            if(display){
-                 var img = document.createElement("img");
-            img.src = "img/1.png";
-            img.id='imga';
-            var src = document.getElementById("x");
-            src.appendChild(img);
-            document.querySelector("#x").style.pointerEvents = "none";
-            }else{
-                if(document.getElementById('imga')){
-        var image_x = document.getElementById('imga');
-        image_x.parentNode.removeChild(image_x);
-        }
+        let hue = 0;
+        let direction = true;
+        let isDraw = false;
+        let lastX = 0;
+        let lastY = 0;
+
+        function draw(e) {
+            if (!isDraw) return;
+            //        console.log(e);
+            ctx.strokeStyle = `hsl(${hue},100%,50%)`;
+            ctx.beginPath();
+            ctx.moveTo(lastX, lastY);
+            ctx.lineTo(e.offsetX, e.offsetY);
+            ctx.stroke();
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+            hue++;
+            if (ctx.lineWidth >= 100 || ctx.lineWidth <= 9) {
+                direction = !direction;
             }
-//            document.querySelector(".__cornify_unicorn").style.pointerEvents = "none";
-        }
-//        console.log(check);
-    });
-    
-    
-    
-    
-</script>
 
-<style>
-  html, body {
-    margin: 0;
-  }
-</style>
+            if (direction) {
+                ctx.lineWidth++;
+                //            console.log(ctx.lineWidth);
+            } else {
+                ctx.lineWidth--;
+                //            console.log(ctx.lineWidth);
+            }
+        }
+
+        canvas.addEventListener('mousemove', draw);
+
+        canvas.addEventListener("touchstart", function(e) {
+            console.log(e);
+            //        var   mousePos = getTouchPos(canvas, e);
+            var touch = e.touches[0];
+            console.log(e);
+            isDraw = true;
+            [lastX, lastY] = [touch.clientX, touch.clientY];
+            draw(touch);
+        });
+        canvas.addEventListener("touchmove", function(e) {
+            console.log(e);
+            //        var   mousePos = getTouchPos(canvas, e);
+            var touch = e.touches[0];
+            console.log(e);
+            isDraw = true;
+            [lastX, lastY] = [touch.clientX, touch.clientY];
+            draw(touch);
+        });
+
+        document.body.addEventListener("touchstart", function(e) {
+            if (e.target == canvas) {
+                e.preventDefault();
+            }
+        }, false);
+        document.body.addEventListener("touchmove", function(e) {
+            if (e.target == canvas) {
+                e.preventDefault();
+            }
+        }, false);
+
+
+
+        canvas.addEventListener('mousedown', (e) => {
+            isDraw = true;
+            [lastX, lastY] = [e.offsetX, e.offsetY];
+            //        if(document.getElementById('imga')){
+            //        var image_x = document.getElementById('imga');
+            //        image_x.parentNode.removeChild(image_x);
+            //        }
+        });
+
+
+
+        canvas.addEventListener('mouseup', () => isDraw = false);
+        canvas.addEventListener('mouseout', () => isDraw = false);
+
+        let ans = [];
+        let display = false;
+        const secretCode = 'nhm';
+
+        window.addEventListener('keyup', (e) => {
+            //        console.log(e.key);
+            ans.push(e.key);
+            ans.splice(-secretCode.length - 1, ans.length - secretCode.length);
+            if (ans.join('').includes(secretCode)) {
+                console.log('DING Dang');
+                display = !display;
+                //            cornify_add();
+                if (display) {
+                    var img = document.createElement("img");
+                    img.src = "img/1.png";
+                    img.id = 'imga';
+                    var src = document.getElementById("x");
+                    src.appendChild(img);
+                    document.querySelector("#x").style.pointerEvents = "none";
+                } else {
+                    if (document.getElementById('imga')) {
+                        var image_x = document.getElementById('imga');
+                        image_x.parentNode.removeChild(image_x);
+                    }
+                }
+                //            document.querySelector(".__cornify_unicorn").style.pointerEvents = "none";
+            }
+            //        console.log(check);
+        });
+
+    </script>
+
+    <style>
+        html,
+        body {
+            margin: 0;
+        }
+
+    </style>
 </body>
+
 </html>
