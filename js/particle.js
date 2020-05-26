@@ -88,7 +88,10 @@ class Particle {
         particles.forEach(particle => {
             const mouseD = dist(this.pos.x, this.pos.y, mouseX, mouseY);
             if (mouseD < 120) {
-                const alpha = map(mouseD, 0, 120, 0, 0.20)
+                let alpha = 0.4;
+                if(mouseD>60){
+                   alpha=0.015;
+                   }
                 stroke(`rgba(2, 70, 70, ${alpha})`);
                 line(this.pos.x, this.pos.y, mouseX, mouseY)
             }
