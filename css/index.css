@@ -25,6 +25,9 @@ body {
     font-family: "Oxygen", sans-serif;
     /*    overflow-x: hidden;*/
 }
+.bodyLight{
+    background: linear-gradient(to bottom right, #dedce8, #f9f9f9,#1111);
+}
 
 a {
     text-decoration: none;
@@ -39,11 +42,17 @@ img {
     z-index: 2;
 }
 
-.home img {
+.darkImg {
+/*    for .home img*/
     width: 100%;
     -webkit-filter: grayscale(100%) contrast(100%);
     filter: grayscale(100%) contrast(100%) brightness(60%);
 
+}
+.lightImg{
+    /*    for .home img*/
+    width: 80%;
+    border-radius: 100%;
 }
 
 .folio img {
@@ -237,9 +246,14 @@ header h5 {
 
 .col {
     border: 1px solid #222;
-    background: rgba(34, 34, 34, 0.6);
     color: #b2b2b2;
     padding: 10px;
+}
+.colDark{
+    background: rgba(34, 34, 34, 0.6);
+}
+.colLight{
+    background: linear-gradient(to bottom right, #dedce8, #f9f9f9,#1111);
 }
 
 label {
@@ -251,7 +265,7 @@ select,
 textarea {
     width: 100%;
     padding: 12px;
-    border none;
+    border: none;
     border: 1px solid #222;
     background: transparent;
     margin-top: 6px;

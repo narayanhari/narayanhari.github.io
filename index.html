@@ -7,13 +7,11 @@
     <link rel="icon" href="img/1.png" type="image/gif">
     <link type="text/css" href="css/index.css" rel="stylesheet">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no, user-scalable=no">
-    <script src="https://code.jquery.com/jquery-3.4.1.js"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
 
 </head>
 
 <body>
-    <script src="js/particle.js"></script>
+<!--    <script src="js/particle.js"></script>-->
     <aside>
         <nav>
 
@@ -30,7 +28,7 @@
             <a href="#contact"><i class="material-icons md-36">mail</i>
                 <p>Contact</p>
             </a>
-            <a href="nhm.html"><i class="material-icons md-36">web</i>
+            <a onclick="toggleTheme()"><i class="material-icons md-36">web</i>
                 <p>Light Theme</p>
             </a>
 
@@ -50,7 +48,7 @@
         <header class="home" id="home"><br><br>
             <h1>I am Narayan Hari</h1>
             <h5>Software Developer | WebDeveloper | Data Scientist | DevOps Developer</h5>
-            <img src="img/1.jpg" alt="">
+            <img class="darkImg" src="img/1.jpg" alt="">
 
         </header>
     </main>
@@ -58,22 +56,22 @@
     <section class="about" id="about">
 
         <h2>About me</h2>
-        <p>
+        <p class="aboutP">
             <span>Hello, I'm Narayan.</span> A machine learning & Blockchain enthusiast and student developer with a rich academic background and passionate about Programming with experience working in web development and basic Machine Learning Algorithms.
         </p>
 
-        <p>
+        <p class="aboutP">
             A BTech focused in Computer And communication engineering currently in sophomore year at Manipal Institute of Technology with interests in web development, Artificial Intelligence. Experienced Technical Committee Member of various Project in college. Skilled in C++, Java, Python, JavaScript, CSS Github, SQL, and HTML5. Seeking an internship to apply my experience in assisting a company.
         </p>
         <h2>My Skills</h2>
-        <div class="row-halves">
-            <div class="col">
+        <div class="row-halves Myskills">
+            <div class="col colDark">
                 <p>WebDev</p>
                 <div class="container">
                     <div class="skills web"> 90%</div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col colDark">
                 <p>DevOps</p>
                 <div class="container">
                     <div class="skills devops"> 90%</div>
@@ -81,15 +79,15 @@
             </div>
         </div>
 
-        <div class="row-halves">
-            <div class="col">
+        <div class="row-halves Myskills ">
+            <div class="col colDark">
 
                 <p>ML</p>
                 <div class="container">
                     <div class="skills ml"> 80%</div>
                 </div>
             </div>
-            <div class="col">
+            <div class="col colDark">
                 <p>BlockChain</p>
                 <div class="container">
                     <div class="skills bc"> 70%</div>
@@ -177,7 +175,9 @@
        
 -->
 
-
+<script src="https://code.jquery.com/jquery-3.4.1.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/p5.js/1.0.0/p5.js"></script>
+    <script src="js/lightTheme.js"></script>
 </body>
 
 </html>
