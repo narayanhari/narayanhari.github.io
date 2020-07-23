@@ -17,6 +17,9 @@ function toggleTheme(){
                 $(this).css("background", "none");
             });
         });
+        const toggleThemeText=document.getElementById("themeToggleP");
+        console.log(toggleThemeText);
+        toggleThemeText.innerHTML="DarkMode";
         
         
         //header
@@ -69,6 +72,9 @@ function toggleTheme(){
                 $(this).css("background", "none");
             });
         });
+                const toggleThemeText=document.getElementById("themeToggleP");
+        console.log(toggleThemeText);
+        toggleThemeText.innerHTML="LightMode";
         
         
         
