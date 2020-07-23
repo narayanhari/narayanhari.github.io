@@ -18,8 +18,11 @@ function toggleTheme(){
             });
         });
         const toggleThemeText=document.getElementById("themeToggleP");
-        console.log(toggleThemeText);
+//        console.log(toggleThemeText);
         toggleThemeText.innerHTML="DarkMode";
+        const toggleThemeTextMobile=document.getElementById("themeToggleA");
+//        console.log(toggleThemeText);
+        toggleThemeTextMobile.innerHTML="DarkMode";
         
         
         //header
@@ -50,7 +53,7 @@ function toggleTheme(){
             col.classList.remove("colDark");
             col.classList.add("colLight");
         });
-        console.log(skillsCol);
+//        console.log(skillsCol);
         
         toggle=0;
     }
@@ -61,7 +64,7 @@ function toggleTheme(){
         //aside
         const aside=document.querySelector("aside");
         const asideA=document.querySelectorAll("aside a");
-        console.log(asideA);
+//        console.log(asideA);
         aside.style.background="#222";
         asideA.forEach(a=>{
             a.style.color="#fff";
@@ -73,8 +76,11 @@ function toggleTheme(){
             });
         });
                 const toggleThemeText=document.getElementById("themeToggleP");
-        console.log(toggleThemeText);
+//        console.log(toggleThemeText);
         toggleThemeText.innerHTML="LightMode";
+        const toggleThemeTextMobile=document.getElementById("themeToggleA");
+//        console.log(toggleThemeText);
+        toggleThemeTextMobile.innerHTML="LightMode";
         
         
         
@@ -97,7 +103,7 @@ function toggleTheme(){
         const aboutSpan=document.querySelector(".about span");
         aboutSpan.style.color="#fff";
        const aboutP=document.querySelectorAll(".about p");
-        console.log(aboutP);
+//        console.log(aboutP);
         aboutP.forEach(p=>{
             p.style.color="#b2b2b2";
         });
