@@ -1,9 +1,12 @@
 var particles = [];
 var partRatio = 0;
 let particlesLength = 0;
+var toggle=1;
 
 function setup() {
     const home = document.querySelector('body');
+    const toggleTheme=document.querySelector("themeToggle");
+//    console.log(toggleTheme);
 
     //    const cnv = createCanvas(windowWidth, windowHeight);
     //    cnv.position(100,100);
@@ -36,18 +39,25 @@ function windowResized() {
 //function windowResized() {
 //    resizeCanvas(windowWidth+scrollX, windowHeight+scrollY);
 //}
-
+function toggleTheme(){
+       toggle=-1*toggle;    
+}
 function draw() {
-    background(0);
-    //    console.log(particles.length);
+    if(toggle==1){
+        background(0);
+        //    console.log(particles.length);
 
-    particles.forEach((particle, idx) => {
-        particle.update();
-        particle.draw();
-        particle.checkParticles(particles.slice(idx));
-        particle.mouseRepultion();
-        particle.addParticles();
-    });
+        particles.forEach((particle, idx) => {
+            particle.update();
+            particle.draw();
+            particle.checkParticles(particles.slice(idx));
+            particle.mouseRepultion();
+            particle.addParticles();
+        });
+    }
+    else{
+        clear();
+    }
 }
 
 class Particle {
