@@ -3,17 +3,16 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <title>GeoLocation</title>
+  <title>Geo Location</title>
   <meta name="viewport" content="width=device-width">
 </head>
 <body>
-    
+
     <p class=".here">here</p>
     <h6>here</h6>
   <script>
-      
+
       const cor= document.querySelector('p');
-      
       navigator.geolocation.watchPosition(data=>{
            let lat=data.coords.latitude;
           let len=data.coords.longitude;
